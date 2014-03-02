@@ -7,7 +7,7 @@ namespace Factory_Mod_Config_Creator
 {
     class ConfigCreator
     {
-        public void config(string fileName, string input, string output, int durab, string action)
+        public void config(string fileName, string input, string output, int durab, string action, int inAmout, int ouAmout)
         {
             Print print = new Print();
             FramWorkListBuilder builder = new FramWorkListBuilder();
@@ -21,13 +21,12 @@ namespace Factory_Mod_Config_Creator
                                     "    inputs:",
                                     "      " + input + ":",
                                     "        material: " + bufferInput.ToUpper(),
-                                    "        amount: <!AMOUNT>"};
+                                    "        amount: " + inAmout};
 
-            string[] outputWork = {"        amount: 64",
-                                    "    outputs:",
+            string[] outputWork = {"    outputs:",
                                     "      " + output + ":",
                                     "        material: " + bufferOutput.ToUpper(),
-                                    "        amount: <!AMOUNTOUTPUT>",
+                                    "        amount: " + ouAmout,
                                     "        durability: " + durab};
 
             list = builder.listBuilder(frameWork, outputWork);

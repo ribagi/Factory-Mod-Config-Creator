@@ -54,6 +54,16 @@ namespace Factory_Mod_Config_Creator
 
         }
 
+        private void textBox7_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             string fileName = Convert.ToString(textBox1.Text);
@@ -61,11 +71,13 @@ namespace Factory_Mod_Config_Creator
             string action = Convert.ToString(textBox3.Text);
             string output = Convert.ToString(textBox4.Text);
             int durab = Convert.ToInt32(textBox6.Text);
+            int inAmout = Convert.ToInt32(textBox7.Text);
+            int ouAmout = Convert.ToInt32(textBox8.Text);
 
             fileName = fileName + ".txt";
 
             ConfigCreator cc = new ConfigCreator();
-            cc.config(fileName, input, output, durab, action);
+            cc.config(fileName, input, output, durab, action, inAmout, ouAmout);
         }
     }
 }
